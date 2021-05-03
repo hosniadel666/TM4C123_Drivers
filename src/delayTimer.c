@@ -30,7 +30,7 @@ void delayMicros(uint32_t n)
 }
 void delayMs(uint32_t n)
 {
-
+	
 	SYSCTL->RCGCTIMER |= 0x08; 	/* enable clock to Timer Block 0 */
 	TIMER3->CTL = 0; 			/* disable Timer before initialization */
 	TIMER3->CFG = 0x04; 		/* 16-bit option */

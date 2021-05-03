@@ -573,6 +573,7 @@ void SystemCoreClockUpdate (void)            /* Get Core Clock Frequency      */
  */
 void SystemInit (void)
 {
+__disable_fault_irq();
 #if(CLOCK_SETUP)
     uint32_t i;
 #endif

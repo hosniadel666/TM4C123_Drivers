@@ -15,6 +15,7 @@
 #include "TM4C123.h"
 #include <stdint.h>
 
+
 /**
 * @brief Configure the uart pins to use them
 * 
