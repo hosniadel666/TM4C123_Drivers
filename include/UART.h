@@ -46,5 +46,13 @@ void UART0Tx(uint8_t c);
 */
 uint8_t UART0Rx(void);
 
+/**
+* @brief Print msg using uart
+* 
+* @param pointer to char
+* 
+* @return void
+*/
+void printMsg(char *msg);
 
 #endif

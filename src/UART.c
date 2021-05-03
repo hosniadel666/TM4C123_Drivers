@@ -9,6 +9,8 @@
 #include "TM4C123.h"
 #include "UART.h"
 #include "delayTimer.h"
+#include <string.h>
+#include <stdint.h>
 
 /**************************************************************
 				Function Definitions
@@ -50,4 +52,12 @@ uint8_t UART0Rx(void)
 	c = UART0->DR; 					// read the received data 
 	
 	return c; 
+}
+
+void printMsg(char *msg)
+{
+	for(uint32_t i = 0; i < strlen(msg); i++)
+	{
+		UART0Tx(msg[i]);
+	}
 }

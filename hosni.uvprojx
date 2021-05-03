@@ -428,6 +428,11 @@
               <FileType>1</FileType>
               <FilePath>.\src\testLED.c</FilePath>
             </File>
+            <File>
+              <FileName>testUART.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\testUART.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

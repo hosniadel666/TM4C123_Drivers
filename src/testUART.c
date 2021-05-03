@@ -1,7 +1,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "TM4C123.h"
-
+#include <string.h>
 #include "UART.h"
 #include "delayTimer.h"
 
@@ -12,13 +12,8 @@ int main(void)
 	UART0_init();
 	while(1)
 	{
-		for(int i = 0; i < 5; i++)
-		{
-			UART0Tx(name[i]);		
-
-		}
-		UART0Tx('\n');
-		UART0Tx('\r');
+		printMsg(name);
+		printMsg("\n\r");
 		delayMs(500);
 	}
 }
