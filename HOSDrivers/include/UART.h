@@ -6,7 +6,7 @@
 * and send and recieve data
 *
 * @author Hosni Adel
-* @date Mar 26 2021
+* @date Mar  2021
 *
 */
 #ifndef __UART_H__

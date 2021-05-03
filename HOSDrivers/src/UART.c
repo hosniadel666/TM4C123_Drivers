@@ -3,7 +3,7 @@
  * @brief Abstraction of sending and recieving data using UART
  *
  * @author Hosni Adel
- * @date Mar  2021
+ * @date Mar 26 2021
  *
  */
 #include "TM4C123.h"
@@ -12,20 +12,28 @@
 #include <string.h>
 #include <stdint.h>
 
+
+#define BR 11520.0   // Baud Rate
+
 /**************************************************************
 				Function Definitions
 **************************************************************/
 
 void UART0_init(void)
 {
-	// Enable clock to required ports
-	SYSCTL->RCGCUART |= 1; 
-	SYSCTL->RCGCGPIO |= 1;  
+	float I_FBRD;
+	SYSCTL->RCGCUART |= 1; // provide clock to UART0 
+	SYSCTL->RCGCGPIO |= 1; // enable clock to PORTA 
 	
 	// UART0 initialization 
 	UART0->CTL = 0; 	   // disable UART0 
-	UART0->IBRD = 104; 	   // 16MHz/16=1MHz, 1MHz/104=9600 baud rate 
-	UART0->FBRD = 11; 	   // fraction part, see Example 4-4 
+	
+	I_FBRD = (SystemCoreClock / 16.0) / BR;
+	UART0->IBRD = (uint32_t) I_FBRD;	// Integer baudrate devisor
+	
+	I_FBRD = (I_FBRD - (uint32_t)I_FBRD) * 1000;
+	UART0->FBRD = (uint32_t) I_FBRD;    // float baudrate devisor
+	
 	UART0->CC = 0; 		   // use system clock 
 	
 	UART0->LCRH = 0x60;    // 8-bit, no parity, 1-stop bit, no FIFO 
@@ -40,10 +48,11 @@ void UART0_init(void)
 	delayMs(1); 		   // wait for output line to stabilize 
 }
 
+
 void UART0Tx(uint8_t c)
 {
 	while((UART0->FR & 0x20) != 0); // wait until Tx buffer not full 
-	UART0->DR = c; 					
+	UART0->DR = c; 					// before giving it another byte 
 }
 
 
@@ -52,7 +61,7 @@ uint8_t UART0Rx(void)
 	uint8_t c;
 	
 	while((UART0->FR & 0x10) != 0); // wait until the buffer is not empty 
-	c = UART0->DR; 					
+	c = UART0->DR; 					// read the received data 
 	
 	return c; 
 }

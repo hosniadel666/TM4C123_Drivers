@@ -20,7 +20,7 @@
 
 void ultrasonic_init(ultrasonicPFConfig pins)
 {
-	// Enable clock to ports
+	// Enable clock to required ports
 	SYSCTL->RCGCGPIO |= 0x02;    	
 	SYSCTL->RCGCTIMER |= 0x01;          
 	SYSCTL->RCGCGPIO |= 2;          

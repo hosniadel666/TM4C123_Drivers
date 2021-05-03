@@ -17,7 +17,7 @@
 
 void LEDs_init(LEDs led)
 {
-	SYSCTL->RCGCGPIO |= 0X20;		// Enable clk to GPIOF
+	SYSCTL->RCGCGPIO |= 0X20;		
 	GPIOF->DIR |= led;
 	GPIOF->DEN |= led;
 	GPIOF->DATA = 0;
@@ -36,7 +36,7 @@ void LED_OFF(LEDs led)
 
 void ALL_LEDs_ON()
 {
-	SYSCTL->RCGCGPIO |= 0x20;		// Enable clk to GPIOF
+	SYSCTL->RCGCGPIO |= 0x20;	
 	GPIOF->DIR |= 0x0E;
 	GPIOF->DEN |= 0x0E;
 	GPIOF->DATA |= 0x0E; 
@@ -44,7 +44,7 @@ void ALL_LEDs_ON()
 
 void ALL_LEDs_OFF()
 {
-	SYSCTL->RCGCGPIO |= 0x20;		// Enable clk to GPIOF
+	SYSCTL->RCGCGPIO |= 0x20;		
 	GPIOF->DIR |= 0x0E;
 	GPIOF->DEN |= 0x0E;
 	GPIOF->DATA &= ~0x0E; 
