@@ -33,7 +33,7 @@ void keypad_init(void)
 uint8_t keypadIspressed(void)
 {
 	int col;
-
+	
 	// check to see any key pressed 
 	KEYPAD_ROW->DATA = 0;           // enable all rows 
 	col = KEYPAD_COL->DATA & 0xE0;  // read all columns 

@@ -1,13 +1,12 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "TM4C123.h"
-#include "pushButton.h"
-#include "delayTimer.h"
-#include "ultrasonic.h"
-#include "UART.h"
-#include "LEDs.h"
 
-int main2(void)
+#include "UART.h"
+#include "delayTimer.h"
+
+
+int main(void)
 {	
 	char *name = "hosni";
 	UART0_init();

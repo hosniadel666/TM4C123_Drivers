@@ -5,8 +5,6 @@
 #include "delayTimer.h"
 #include "LEDs.h"
 
-
-
 int main_testLED(void)
 {
 

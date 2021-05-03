@@ -409,6 +409,11 @@
               <FilePath>.\src\keyPad.c</FilePath>
             </File>
             <File>
+              <FileName>LEDs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\LEDs.c</FilePath>
+            </File>
+            <File>
               <FileName>UART.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\UART.c</FilePath>
@@ -417,11 +422,6 @@
               <FileName>testPushButton.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\testPushButton.c</FilePath>
-            </File>
-            <File>
-              <FileName>LEDs.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\LEDs.c</FilePath>
             </File>
             <File>
               <FileName>testLED.c</FileName>
