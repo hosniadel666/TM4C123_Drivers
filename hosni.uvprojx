@@ -418,6 +418,11 @@
               <FileType>1</FileType>
               <FilePath>.\HOSDrivers\src\delayTimer.c</FilePath>
             </File>
+            <File>
+              <FileName>DHT11.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\HOSDrivers\src\DHT11.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -452,6 +457,11 @@
               <FileName>ultrasonic.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\HOSDrivers\include\ultrasonic.h</FilePath>
+            </File>
+            <File>
+              <FileName>DHT11.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\HOSDrivers\include\DHT11.h</FilePath>
             </File>
           </Files>
         </Group>
